@@ -8,7 +8,8 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest extends Data {
 
-    MainPage mainPage=new MainPage();
+    MainPage mainPage = new MainPage();
+
     @BeforeMethod
     public void setUp() throws InterruptedException {
         webDriver = new ChromeDriver();
