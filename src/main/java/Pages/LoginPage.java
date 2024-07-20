@@ -10,6 +10,7 @@ public class LoginPage extends BaseLibrary {
     @Step("E-Posta Alanı Doldurulur")
     public LoginPage emailDoldur(String email) {
         webDriver.findElement(By.name("username")).sendKeys(email);
+        screenshot();
         return this;
     }
 
