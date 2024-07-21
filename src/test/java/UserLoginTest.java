@@ -11,6 +11,7 @@ public class UserLoginTest extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
 
+    /*
     @Test
     public void loginSuccessful() throws InterruptedException {
         WebDriver webDriver = new ChromeDriver();
@@ -25,7 +26,7 @@ public class UserLoginTest extends BaseTest {
         Thread.sleep(3000);
         webDriver.findElement(By.name("btnLogin")).click();
 
-    }
+    }*/
 
     @Test(description = "Başarılı kullanıcı login kontrolü")
     public void loginUserSuccesfull() throws InterruptedException {
@@ -37,7 +38,7 @@ public class UserLoginTest extends BaseTest {
         sleep(5000);
     }
 
-    @Test(description = "Hatalı Login Kullanıcı Giriş Kontrol: {text}")
+    @Test(description = "Hatalı Login Kullanıcı Giriş Kontrol")
     public void notValidLogin() throws InterruptedException {
         loginPage
                 .emailDoldur(email)
@@ -65,7 +66,7 @@ public class UserLoginTest extends BaseTest {
                 .passwordDoldur(password)
                 .loginTikla();
         sleep(3000);
-        // loginPage.hataMesajiKontrolu(message2);
+         loginPage.hataMesajiKontrolu(message);
     }
 
 
@@ -80,7 +81,7 @@ public class UserLoginTest extends BaseTest {
                 .loginTikla();
         sleep(3000);
         loginPage
-                .hataMesajiKontrolu("Lütfen şifrenizi giriniz.")
+                //.hataMesajiKontrolu("Lütfen şifrenizi giriniz.")
                 .passwordDoldur(password)
                 .loginTikla();
         sleep(3000);

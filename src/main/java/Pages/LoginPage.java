@@ -10,7 +10,6 @@ public class LoginPage extends BaseLibrary {
     @Step("E-Posta Alanı Doldurulur")
     public LoginPage emailDoldur(String email) {
         webDriver.findElement(By.name("username")).sendKeys(email);
-        screenshot();
         return this;
     }
 
@@ -26,7 +25,7 @@ public class LoginPage extends BaseLibrary {
     }
 
     public LoginPage hataMesajiKontrolu(String text) {
-        String value = webDriver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[1]/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div")).getText();
+        String value = webDriver.findElement(By.cssSelector("[class='hb-fzpaiS DgEia s31skbo562q']")).getText();
         Assert.assertEquals(text, value);
         return this;
     }
